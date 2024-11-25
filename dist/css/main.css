@@ -1,0 +1,91 @@
+@import url(/node_modules/bootstrap/scss/bootstrap.scss);
+:root {
+  --background-color: #202020;
+  --primary-color: #FEE877;
+  --primary-color-text: #d4be4c;
+  --primary-color-hover: #e7d05c;
+  --text-color: #ffffff;
+  --text-color-2: #202020;
+  --input-box: #F5F3EE;
+  --light-black: #272727;
+  --light-black-2: #383838;
+}
+
+.light-black-2 {
+  background-color: var(--light-black-2);
+}
+
+body {
+  background-color: var(--background-color);
+  color: var(--text-color);
+}
+
+.btn-primary {
+  background-color: var(--primary-color);
+  color: var(--text-color-2);
+  border: 2px solid var(--primary-color);
+}
+.btn-primary:hover {
+  background-color: var(--primary-color-hover);
+  color: var(--text-color-2);
+  border: 2px solid var(--primary-color-hover);
+}
+
+a {
+  color: white;
+}
+
+.nav-link {
+  color: white;
+}
+
+.active {
+  color: white;
+}
+
+.nav-underline {
+  --bs-nav-underline-link-active-color: white;
+}
+
+/*Nav*/
+header {
+  background-color: var(--light-black-2);
+}
+
+.navbar-brand {
+  color: var(--text-color);
+}
+
+.navbar .nav-link.active {
+  color: var(--text-color) !important;
+}
+
+/*Card*/
+.card {
+  background-color: var(--light-black-2);
+  color: var(--text-color);
+}
+
+.card-img-top {
+  height: 20rem;
+  object-fit: cover;
+  width: 100%;
+}
+
+.highlight-yellow {
+  color: var(--primary-color);
+}
+
+/*Table*/
+.table {
+  --bs-table-bg: var(--light-black-2);
+  --bs-table-color: white;
+  --bs-tale-hover-bg:var(--light-black);
+  --bs-tale-hover-color: white;
+  border-color: var(--background-color);
+}
+.table:hover {
+  --bs-table-hover-color: white;
+}
+
+/*# sourceMappingURL=main.css.map */

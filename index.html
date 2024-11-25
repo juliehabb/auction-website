@@ -1,4 +1,6 @@
-<html>
+<!DOCTYPE html>
+
+<html lang="en">
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -56,21 +58,146 @@
               </nav>
         </header>
 
-        <main>
-            <section></section>
-            <section>
-                <div class="filters">
+        <main class="container-fluid">
+          <div class="row">
+            <section class="col-sm-2 d-flex ">
+              <div class="d-flex flex-column">
+                <div>
+                  <button class="btn btn-primary">+ New Listing</button>
+                </div>
+                <div class="">
+                  <form class="d-flex flex-column justify-content-center">
                     <div>
-
+                      <input type="checkbox" name="Art" value="Art">
+                      <label for="Art"> Art</label>
                     </div>
                     <div>
-                        
+                      <input type="checkbox" name="Artifacts" value="Artifacts">
+                      <label for="Artifacts"> Artifacts</label>
+                    </div>
+                    <div>
+                      <input type="checkbox" name="Decorations" value="Decorations">
+                      <label for="Decorations">Decorations</label>
+                    </div>
+                    <div>
+                      <input type="checkbox" name="Furniture" value="Furniture">
+                      <label for="Furniture">Furniture</label>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </section>
+            <section class="col-sm-10 d-flex flex-column">
+                <div class="filters d-flex justify-content-end">
+                    <div class=" d-flex flex-row ">
+                      <ul class="list-unstyled d-flex flex-row mb-0">
+                        <li class="dropdown">By relevancy</li>
+                      </ul>
+                      <button class="btn btn-secondary">Filter</button>
                     </div>
                 </div>
-                <div class="grid">
-                    
+                <div class="post-grid">
+                  <div class="row g-4">
+                    <div class="col-12 col-sm-6 col-md-4">
+                      <div class="card col shadow-sm">
+                        <img src="/images/pexels-mertal-22487122_optimized.jpg" alt="Image of listing" class="card-img-top">
+                        <div class="card-body">
+                          <h3 class="card-title">Listing</h3>
+                          <div>
+                            <div>
+                              <p>01t 20min 05sek</p>
+                              <p>left</p>
+                            </div>
+                            <div>
+                              <p>120,-</p>
+                              <p>highest bid</p>
+                            </div>
+                          </div>
+                          <hr>
+                          <div>
+                            <p>Place: Bergen</p>
+                            <button class="btn btn-primary">Place bid</button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-12 col-sm-6 col-md-4">
+                      <div class="card col shadow-sm">
+                        <img src="/images/pexels-mertal-22487122_optimized.jpg" alt="Image of listing" class="card-img-top">
+                        <div class="card-body">
+                          <h3 class="card-title">Listing</h3>
+                          <div>
+                            <div>
+                              <p>01t 20min 05sek</p>
+                              <p>left</p>
+                            </div>
+                            <div>
+                              <p>120,-</p>
+                              <p>highest bid</p>
+                            </div>
+                          </div>
+                          <hr>
+                          <div>
+                            <p>Place: Bergen</p>
+                            <button class="btn btn-primary">Place bid</button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-12 col-sm-6 col-md-4">
+                      <div class="card shadow-sm">
+                        <img src="/images/pexels-mertal-22487122_optimized.jpg" alt="Image of listing" class="card-img-top">
+                        <div class="card-body">
+                          <h3 class="card-title">Listing</h3>
+                          <div>
+                            <div>
+                              <p>01t 20min 05sek</p>
+                              <p>left</p>
+                            </div>
+                            <div>
+                              <p>120,-</p>
+                              <p>highest bid</p>
+                            </div>
+                          </div>
+                          <hr>
+                          <div>
+                            <p>Place: Bergen</p>
+                            <button class="btn btn-primary">Place bid</button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-12 col-sm-6 col-md-4">
+                      <div class="card shadow-sm">
+                        <img src="/images/pexels-mertal-22487122_optimized.jpg" alt="Image of listing" class="card-img-top">
+                        <div class="card-body">
+                          <h3 class="card-title">Listing</h3>
+                          <div>
+                            <div>
+                              <p>01t 20min 05sek</p>
+                              <p>left</p>
+                            </div>
+                            <div>
+                              <p>120,-</p>
+                              <p>highest bid</p>
+                            </div>
+                          </div>
+                          <hr>
+                          <div>
+                            <p>Place: Bergen</p>
+                            <button class="btn btn-primary">Place bid</button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
                 </div>
             </section>
+          </div>
         </main>
+        <footer>
+          <hr>
+          <p>2024 Auction</p>
+        </footer>
     </body>
 </html>

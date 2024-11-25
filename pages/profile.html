@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="Profile" content="This is a Profile on an auction site">
+        <title>Profile</title>
+        <script src="https://kit.fontawesome.com/ab8b6737a1.js" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="/node_modules/bootstrap/dist/css/bootstrap.min.css"/>
+    </head>
+    <body>
+        <header></header>
+        <main>
+            <!--User info-->
+            <section class="container-fluid container-md bg-secondary mb-3 mt-4">
+                <div class="row p-4 d-flex ">
+                    <div class="col-sm-2" >
+                        <img class="rounded-circle" width="130" height="130" src="/images/pexels-mertal-22487122_optimized.jpg" alt="Profile photo">
+                        <i class="fa-solid fa-user-pen"></i>
+                    </div>
+                    <div class="col-sm-10">
+                        <div>
+                            <h1>Julie Habbestad</h1>
+                            <p>1000p</p>
+                        </div>
+                        <div>
+                            <p>Welcome! I’m a dedicated seller with a passion for finding unique, high-quality items and passing them on to new homes. From vintage treasures and collectibles to modern must-haves, I carefully select and list only items I’d be proud to own myself. Happy bidding!</p>
+                        </div>
+                    </div>
+
+                </div>
+
+
+            </section>
+            <!--Listings, bids, likes-->
+            <section class=" container-fluid container-md">
+                <!--Tabs-->
+                <div>
+                  <ul class="nav nav-underline">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Your Listings</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Your Bids</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Favorites</a>
+                    </li>
+                  </ul>
+                </div>
+                <!--Forms-->
+                <div class="bg-secondary p-4">
+                    <div class="d-flex flex-column">
+                        <div class="d-flex align-items-center">
+                            <h3 class="pt-4">Your Listings</h3>
+                            <p class="mb-0">05</p>
+                        </div>
+                        <div class="d-flex pb-2
+                         justify-content-end">
+                            <button class="btn btn-primary">+ New Listing</button>
+                        </div>
+                    
+                    </div>
+                    <div>
+                        <table class="table table-hover">
+                            <thead>
+                                <tr>
+                                    <th scope="col">Image</th>
+                                    <th scope="col">Name</th>
+                                    <th scope="col">End date</th>
+                                    <th scope="col">Highest Bid</th>
+                                    <th scope="col"></th>
+                                    <th scope="col"></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        <img width="10" height="10" src="/images/pexels-mertal-22487122_optimized.jpg" alt="Listing image">
+                                    </td>
+                                    <td>Sculpture</td>
+                                    <td>11.12.24</td>
+                                    <td>30,-</td>
+                                    <td>
+                                        <i class="fa-regular fa-pen-to-square"></i>
+                                    </td>
+                                    <td>
+                                        <i class="fa-solid fa-xmark"></i>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <img width="10" height="10" src="/images/pexels-mertal-22487122_optimized.jpg" alt="Listing image">
+                                    </td>
+                                    <td>Sculpture</td>
+                                    <td>11.12.24</td>
+                                    <td>30,-</td>
+                                    <td>
+                                        <i class="fa-regular fa-pen-to-square"></i>
+                                    </td>
+                                    <td>
+                                        <i class="fa-solid fa-xmark"></i>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                </div>
+            </section>
+        </main>
+        <footer></footer>
+    </body>
+
+</html>

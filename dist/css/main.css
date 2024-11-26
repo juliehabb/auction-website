@@ -9,15 +9,28 @@
   --input-box: #F5F3EE;
   --light-black: #272727;
   --light-black-2: #383838;
+  --light-black-3: #464646;
 }
 
 .light-black-2 {
   background-color: var(--light-black-2);
 }
 
+.light-black-3 {
+  background-color: var(--light-black-3);
+}
+
+.bid-history {
+  background-color: var(--light-black-3);
+}
+
 body {
   background-color: var(--background-color);
   color: var(--text-color);
+}
+
+.pt-6 {
+  padding-top: 5rem;
 }
 
 .btn-primary {
@@ -29,6 +42,39 @@ body {
   background-color: var(--primary-color-hover);
   color: var(--text-color-2);
   border: 2px solid var(--primary-color-hover);
+}
+
+.input-group {
+  width: 9rem;
+}
+
+.form-control {
+  background-color: var(--light-black-2);
+  color: white;
+}
+.form-control::placeholder {
+  color: white;
+}
+
+input {
+  background-color: var(--light-black-2);
+}
+
+input[type=time]::-webkit-calendar-picker-indicator {
+  filter: invert(50%); /* Adjust color by inverting */
+}
+
+input[type=time]::-webkit-calendar-picker-indicator:hover {
+  filter: invert(30%);
+}
+
+input[type=date]::-webkit-calendar-picker-indicator {
+  filter: invert(50%);
+  cursor: pointer;
+}
+
+input[type=date]::-webkit-calendar-picker-indicator:hover {
+  filter: invert(30%);
 }
 
 a {
@@ -50,6 +96,10 @@ a {
 /*Nav*/
 header {
   background-color: var(--light-black-2);
+}
+
+.navbar {
+  height: 4rem;
 }
 
 .navbar-brand {
@@ -86,6 +136,25 @@ header {
 }
 .table:hover {
   --bs-table-hover-color: white;
+}
+
+.table-light {
+  --bs-table-bg: var(--light-black-3);
+  --bs-table-color: white;
+  --bs-tale-hover-bg:var(--light-black);
+  --bs-tale-hover-color: white;
+  border-color: var(--background-color);
+}
+.table-light:hover {
+  --bs-table-hover-color: white;
+}
+
+.modal-content {
+  background-color: var(--light-black-2);
+}
+
+i {
+  color: white;
 }
 
 /*# sourceMappingURL=main.css.map */

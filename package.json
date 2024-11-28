@@ -4,10 +4,11 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "sass scss:dist/css",
-    "watch": "sass --watch scss:dist/css",
-    "start": "live-server",
-    "dev": "npm-run-all --parallel watch start"
+    "build:css": "sass scss:dist/css",
+    "build": "vite build && npm run build:css",
+    "watch:css": "sass --watch scss:dist/css",
+    "start": "vite",
+    "dev": "npm-run-all --parallel watch:css start"
   },
   "keywords": [],
   "author": "",

@@ -1,229 +1,307 @@
-<!DOCTYPE html>
+<!doctype html>
 
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta name="Auction Site" content="This is an auction site">
-        <title>Auction Site</title>
-        <script src="https://kit.fontawesome.com/ab8b6737a1.js" crossorigin="anonymous"></script>
-        <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css"/>
-        <link rel="stylesheet" href="dist/css/main.css"/>
-    </head>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="Auction Site" content="This is an auction site" />
+    <title>Auction Site</title>
+    <script
+      src="https://kit.fontawesome.com/ab8b6737a1.js"
+      crossorigin="anonymous"
+    ></script>
+    <link
+      rel="stylesheet"
+      href="node_modules/bootstrap/dist/css/bootstrap.min.css"
+    />
+    <link rel="stylesheet" href="dist/css/main.css" />
+  </head>
 
-    <body>
-        <header>
-            <nav class="navbar navbar-expand-lg mb-3">
-                <div class="container-fluid">
-                  <a class="navbar-brand" href="#">Navbar</a>
-                  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
+  <body>
+    <header>
+      <nav class="navbar navbar-expand-lg mb-3">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">Navbar</a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a
+                  class="nav-link active text-white custom-white"
+                  aria-current="page"
+                  href="#"
+                  >Home</a
+                >
+              </li>
+            </ul>
+            <div class="navbar-nav align-items-center">
+              <form class="d-flex mb-0 mr-1 p-4" role="search">
+                <div class="input-group mb-0">
+                  <input
+                    type="text"
+                    class="form-control"
+                    placeholder="Search"
+                    aria-label="Search"
+                    aria-describedby="button-addon2"
+                  />
+                  <button
+                    class="btn btn-outline-secondary mr-3"
+                    type="button"
+                    id="button-addon2"
+                  >
+                    <i class="fa-solid fa-magnifying-glass"></i>
                   </button>
-                  <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <ul class="navbar-nav me-auto mb-2 mb-lg-0 ">
-                      <li class="nav-item">
-                        <a class="nav-link active text-white custom-white" aria-current="page" href="#">Home</a>
-                      </li>
-                    </ul>
-                    <div class="navbar-nav align-items-center">
-                        <form class="d-flex mb-0 mr-1 p-4" role="search">
-                            <div class="input-group mb-0">
-                                <input type="text" class="form-control" placeholder="Search" aria-label="Search" aria-describedby="button-addon2">
-                                <button class="btn btn-outline-secondary mr-3 " type="button" id="button-addon2">
-                                    <i class="fa-solid fa-magnifying-glass"></i>
-                                </button>
-                            </div>
-                        </form>
-                        <div class="ml-3">
-                            <button type="button" class="btn btn-primary ml-3">+ New Listing</button>
-                        </div>
-                        
-                        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                          <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle mr-3" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                              <img class="rounded-circle" width="40rem" height="40rem" src="/images/pexels-mertal-22487122_optimized.jpg
-                              " alt="Profile photo">
-                            </a>
-                            <ul class="dropdown-menu">
-                              <li><a class="dropdown-item" href="#">Profile</a></li>
-                              <li><a class="dropdown-item" href="#">Log out</a></li>
-                              <li><hr class="dropdown-divider"></li>
-                              <li><a class="dropdown-item" href="#">Something else here</a></li>
-                            </ul>
-                          </li>
-                        </ul>
+                </div>
+              </form>
+              <div class="ml-3">
+                <button type="button" class="btn btn-primary ml-3">
+                  + New Listing
+                </button>
+              </div>
+
+              <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item dropdown">
+                  <a
+                    class="nav-link dropdown-toggle mr-3"
+                    href="#"
+                    role="button"
+                    data-bs-toggle="dropdown"
+                    aria-expanded="false"
+                  >
+                    <img
+                      class="rounded-circle"
+                      width="40rem"
+                      height="40rem"
+                      src="/images/pexels-mertal-22487122_optimized.jpg
+                              "
+                      alt="Profile photo"
+                    />
+                  </a>
+                  <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="#">Profile</a></li>
+                    <li><a class="dropdown-item" href="#">Log out</a></li>
+                    <li><hr class="dropdown-divider" /></li>
+                    <li>
+                      <a class="dropdown-item" href="#">Something else here</a>
+                    </li>
+                  </ul>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-fluid">
+      <div class="row">
+        <section class="col-sm-2 d-flex p-4 sidebar">
+          <div class="d-flex flex-column">
+            <div>
+              <button class="btn btn-primary">+ New Listing</button>
+            </div>
+            <div class="sidebar">
+              <form class="d-flex flex-column justify-content-center">
+                <div class="pb-2 pt-4">
+                  <input type="checkbox" name="Art" value="Art" />
+                  <label for="Art"> Art</label>
+                </div>
+                <div class="pb-2">
+                  <input type="checkbox" name="Artifacts" value="Artifacts" />
+                  <label for="Artifacts"> Artifacts</label>
+                </div>
+                <div class="pb-2">
+                  <input
+                    type="checkbox"
+                    name="Decorations"
+                    value="Decorations"
+                  />
+                  <label for="Decorations">Decorations</label>
+                </div>
+                <div class="pb-2">
+                  <input type="checkbox" name="Furniture" value="Furniture" />
+                  <label for="Furniture">Furniture</label>
+                </div>
+              </form>
+            </div>
+          </div>
+        </section>
+        <section class="col-sm-10 d-flex flex-column">
+          <div class="filters d-flex justify-content-end">
+            <div class="d-flex flex-row pb-3">
+              <ul class="list-unstyled d-flex flex-row mb-0 pr-3">
+                <li class="dropdown">By relevancy</li>
+              </ul>
+              <button class="btn btn-secondary">Filter</button>
+            </div>
+          </div>
+          <div class="post-grid">
+            <div
+              class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-4"
+            >
+              <div class="col">
+                <div class="card col shadow-sm">
+                  <img
+                    src="/images/pexels-mertal-22487122_optimized.jpg"
+                    alt="Image of listing"
+                    class="card-img-top"
+                  />
+                  <div class="card-body">
+                    <h3 class="card-title pb-2">Listing</h3>
+                    <div class="d-flex justify-content-between">
+                      <div>
+                        <p class="fw-bold highlight-yellow mb-0">
+                          01t 20min 05sek
+                        </p>
+                        <p class="mb-0 mt-0">Left</p>
+                      </div>
+                      <div>
+                        <p class="fw-bold highlight-yellow mb-0">120,-</p>
+                        <p class="mb-0 mt-0">Highest bid</p>
+                      </div>
+                    </div>
+                    <hr />
+                    <div class="d-flex justify-content-between mb-2">
+                      <p>Place: Bergen</p>
+                      <button class="btn btn-primary">Place bid</button>
                     </div>
                   </div>
-                </div>
-              </nav>
-        </header>
-
-        <main class="container-fluid">
-          <div class="row">
-            <section class="col-sm-2 d-flex p-4 sidebar">
-              <div class="d-flex flex-column">
-                <div>
-                  <button class="btn btn-primary">+ New Listing</button>
-                </div>
-                <div class="sidebar">
-                  <form class="d-flex flex-column justify-content-center">
-                    <div class="pb-2 pt-4">
-                      <input type="checkbox" name="Art" value="Art">
-                      <label for="Art"> Art</label>
-                    </div>
-                    <div class="pb-2">
-                      <input type="checkbox" name="Artifacts" value="Artifacts">
-                      <label for="Artifacts"> Artifacts</label>
-                    </div>
-                    <div class="pb-2">
-                      <input type="checkbox" name="Decorations" value="Decorations">
-                      <label for="Decorations">Decorations</label>
-                    </div>
-                    <div class="pb-2">
-                      <input type="checkbox" name="Furniture" value="Furniture">
-                      <label for="Furniture">Furniture</label>
-                    </div>
-                  </form>
                 </div>
               </div>
-            </section>
-            <section class="col-sm-10 d-flex flex-column">
-                <div class="filters d-flex justify-content-end">
-                    <div class=" d-flex flex-row pb-3 ">
-                      <ul class="list-unstyled d-flex flex-row mb-0 pr-3">
-                        <li class="dropdown ">By relevancy</li>
-                      </ul>
-                      <button class="btn btn-secondary">Filter</button>
-                    </div>
-                </div>
-                <div class="post-grid">
-                  <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-4">
-                    <div class="col">
-                      <div class="card col shadow-sm">
-                        <img  src="/images/pexels-mertal-22487122_optimized.jpg" alt="Image of listing" class="card-img-top">
-                        <div class="card-body">
-                          <h3 class="card-title pb-2">Listing</h3>
-                          <div class="d-flex justify-content-between">
-                            <div>
-                              <p class="fw-bold highlight-yellow mb-0">01t 20min 05sek</p>
-                              <p class="mb-0 mt-0">Left</p>
-                            </div>
-                            <div>
-                              <p class="fw-bold highlight-yellow mb-0">120,-</p>
-                              <p class="mb-0 mt-0">Highest bid</p>
-                            </div>
-                          </div>
-                          <hr>
-                          <div class="d-flex justify-content-between mb-2">
-                            <p>Place: Bergen</p>
-                            <button class="btn btn-primary">Place bid</button>
-                          </div>
-                        </div>
+              <div class="col">
+                <div class="card col shadow-sm">
+                  <img
+                    src="/images/pexels-mertal-22487122_optimized.jpg"
+                    alt="Image of listing"
+                    class="card-img-top"
+                  />
+                  <div class="card-body">
+                    <h3 class="card-title pb-2">Listing</h3>
+                    <div class="d-flex justify-content-between">
+                      <div>
+                        <p class="fw-bold highlight-yellow mb-0">
+                          01t 20min 05sek
+                        </p>
+                        <p class="mb-0 mt-0">Left</p>
+                      </div>
+                      <div>
+                        <p class="fw-bold highlight-yellow mb-0">120,-</p>
+                        <p class="mb-0 mt-0">Highest bid</p>
                       </div>
                     </div>
-                    <div class="col">
-                      <div class="card col shadow-sm">
-                        <img  src="/images/pexels-mertal-22487122_optimized.jpg" alt="Image of listing" class="card-img-top">
-                        <div class="card-body">
-                          <h3 class="card-title pb-2">Listing</h3>
-                          <div class="d-flex justify-content-between">
-                            <div>
-                              <p class="fw-bold highlight-yellow mb-0">01t 20min 05sek</p>
-                              <p class="mb-0 mt-0">Left</p>
-                            </div>
-                            <div>
-                              <p class="fw-bold highlight-yellow mb-0">120,-</p>
-                              <p class="mb-0 mt-0">Highest bid</p>
-                            </div>
-                          </div>
-                          <hr>
-                          <div class="d-flex justify-content-between mb-2">
-                            <p>Place: Bergen</p>
-                            <button class="btn btn-primary">Place bid</button>
-                          </div>
-                        </div>
-                      </div>
+                    <hr />
+                    <div class="d-flex justify-content-between mb-2">
+                      <p>Place: Bergen</p>
+                      <button class="btn btn-primary">Place bid</button>
                     </div>
-                    <div class="col">
-                      <div class="card col shadow-sm">
-                        <img  src="/images/pexels-mertal-22487122_optimized.jpg" alt="Image of listing" class="card-img-top">
-                        <div class="card-body">
-                          <h3 class="card-title pb-2">Listing</h3>
-                          <div class="d-flex justify-content-between">
-                            <div>
-                              <p class="fw-bold highlight-yellow mb-0">01t 20min 05sek</p>
-                              <p class="mb-0 mt-0">Left</p>
-                            </div>
-                            <div>
-                              <p class="fw-bold highlight-yellow mb-0">120,-</p>
-                              <p class="mb-0 mt-0">Highest bid</p>
-                            </div>
-                          </div>
-                          <hr>
-                          <div class="d-flex justify-content-between mb-2">
-                            <p>Place: Bergen</p>
-                            <button class="btn btn-primary">Place bid</button>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="col">
-                      <div class="card col shadow-sm">
-                        <img  src="/images/pexels-mertal-22487122_optimized.jpg" alt="Image of listing" class="card-img-top">
-                        <div class="card-body">
-                          <h3 class="card-title pb-2">Listing</h3>
-                          <div class="d-flex justify-content-between">
-                            <div>
-                              <p class="fw-bold highlight-yellow mb-0">01t 20min 05sek</p>
-                              <p class="mb-0 mt-0">Left</p>
-                            </div>
-                            <div>
-                              <p class="fw-bold highlight-yellow mb-0">120,-</p>
-                              <p class="mb-0 mt-0">Highest bid</p>
-                            </div>
-                          </div>
-                          <hr>
-                          <div class="d-flex justify-content-between mb-2">
-                            <p>Place: Bergen</p>
-                            <button class="btn btn-primary">Place bid</button>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="col">
-                      <div class="card col shadow-sm">
-                        <img  src="/images/pexels-mertal-22487122_optimized.jpg" alt="Image of listing" class="card-img-top">
-                        <div class="card-body">
-                          <h3 class="card-title pb-2">Listing</h3>
-                          <div class="d-flex justify-content-between">
-                            <div>
-                              <p class="fw-bold highlight-yellow mb-0">01t 20min 05sek</p>
-                              <p class="mb-0 mt-0">Left</p>
-                            </div>
-                            <div>
-                              <p class="fw-bold highlight-yellow mb-0">120,-</p>
-                              <p class="mb-0 mt-0">Highest bid</p>
-                            </div>
-                          </div>
-                          <hr>
-                          <div class="d-flex justify-content-between mb-2">
-                            <p>Place: Bergen</p>
-                            <button class="btn btn-primary">Place bid</button>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    
-
-                    
                   </div>
                 </div>
-            </section>
+              </div>
+              <div class="col">
+                <div class="card col shadow-sm">
+                  <img
+                    src="/images/pexels-mertal-22487122_optimized.jpg"
+                    alt="Image of listing"
+                    class="card-img-top"
+                  />
+                  <div class="card-body">
+                    <h3 class="card-title pb-2">Listing</h3>
+                    <div class="d-flex justify-content-between">
+                      <div>
+                        <p class="fw-bold highlight-yellow mb-0">
+                          01t 20min 05sek
+                        </p>
+                        <p class="mb-0 mt-0">Left</p>
+                      </div>
+                      <div>
+                        <p class="fw-bold highlight-yellow mb-0">120,-</p>
+                        <p class="mb-0 mt-0">Highest bid</p>
+                      </div>
+                    </div>
+                    <hr />
+                    <div class="d-flex justify-content-between mb-2">
+                      <p>Place: Bergen</p>
+                      <button class="btn btn-primary">Place bid</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col">
+                <div class="card col shadow-sm">
+                  <img
+                    src="/images/pexels-mertal-22487122_optimized.jpg"
+                    alt="Image of listing"
+                    class="card-img-top"
+                  />
+                  <div class="card-body">
+                    <h3 class="card-title pb-2">Listing</h3>
+                    <div class="d-flex justify-content-between">
+                      <div>
+                        <p class="fw-bold highlight-yellow mb-0">
+                          01t 20min 05sek
+                        </p>
+                        <p class="mb-0 mt-0">Left</p>
+                      </div>
+                      <div>
+                        <p class="fw-bold highlight-yellow mb-0">120,-</p>
+                        <p class="mb-0 mt-0">Highest bid</p>
+                      </div>
+                    </div>
+                    <hr />
+                    <div class="d-flex justify-content-between mb-2">
+                      <p>Place: Bergen</p>
+                      <button class="btn btn-primary">Place bid</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col">
+                <div class="card col shadow-sm">
+                  <img
+                    src="/images/pexels-mertal-22487122_optimized.jpg"
+                    alt="Image of listing"
+                    class="card-img-top"
+                  />
+                  <div class="card-body">
+                    <h3 class="card-title pb-2">Listing</h3>
+                    <div class="d-flex justify-content-between">
+                      <div>
+                        <p class="fw-bold highlight-yellow mb-0">
+                          01t 20min 05sek
+                        </p>
+                        <p class="mb-0 mt-0">Left</p>
+                      </div>
+                      <div>
+                        <p class="fw-bold highlight-yellow mb-0">120,-</p>
+                        <p class="mb-0 mt-0">Highest bid</p>
+                      </div>
+                    </div>
+                    <hr />
+                    <div class="d-flex justify-content-between mb-2">
+                      <p>Place: Bergen</p>
+                      <button class="btn btn-primary">Place bid</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
-        </main>
-        <footer>
-          <hr>
-          <p>2024 Auction</p>
-        </footer>
-    </body>
+        </section>
+      </div>
+    </main>
+    <footer>
+      <hr />
+      <p>2024 Auction</p>
+    </footer>
+  </body>
 </html>

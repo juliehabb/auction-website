@@ -1,62 +1,90 @@
-<!DOCTYPE html>
+<!doctype html>
 
 <html lang="en">
-    <head>
-        <link rel="stylesheet" href="/node_modules/bootstrap/dist/css/bootstrap.min.css"/>
-        <link rel="stylesheet" href="/dist/css/main.css"/>
-    </head>
-    <main>
-        <div class="modal" tabindex="-1" style="display: block;">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h4 class="modal-title">New Listing</h4>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" ></button>
-                    </div>
-                    <div class="modal-body d-flex container-fluid">
-                        <div class="row">
-                            <div class="col-6">
-                                <label for="title" id="title-label">Title</label>
-                                <input id="title" class="form-control" type="input" name="title">
-    
-                                <label for="description" id="description-label">Description</label>
-                                <textarea  name="description" class="form-control" id="description" rows="4" placeholder="Enter a description..."></textarea>
-    
-                                <label for="price" id="price-label">Start price</label>
-                                <input id="price" class="form-control" type="number" name="price">
+  <head>
+    <link
+      rel="stylesheet"
+      href="/node_modules/bootstrap/dist/css/bootstrap.min.css"
+    />
+    <link rel="stylesheet" href="/dist/css/main.css" />
+  </head>
+  <main>
+    <div class="modal" tabindex="-1" style="display: block">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h4 class="modal-title">New Listing</h4>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body d-flex container-fluid">
+            <div class="row">
+              <div class="col-6">
+                <label for="title" id="title-label">Title</label>
+                <input
+                  id="title"
+                  class="form-control"
+                  type="input"
+                  name="title"
+                />
 
-                                <label for="endDate">End Date</label>
-                                <input id="endDate" class="form-control" type="date" />
+                <label for="description" id="description-label"
+                  >Description</label
+                >
+                <textarea
+                  name="description"
+                  class="form-control"
+                  id="description"
+                  rows="4"
+                  placeholder="Enter a description..."
+                ></textarea>
 
-                                <label for="endTime">End Time</label>
-                                <input id="endTime" class="form-control" type="time" />
+                <label for="price" id="price-label">Start price</label>
+                <input
+                  id="price"
+                  class="form-control"
+                  type="number"
+                  name="price"
+                />
 
-                                <label for="tag" id="tag-label">Tag</label>
-                                <input id="tag" class="form-control" type="input" name="tag">
+                <label for="endDate">End Date</label>
+                <input id="endDate" class="form-control" type="date" />
 
+                <label for="endTime">End Time</label>
+                <input id="endTime" class="form-control" type="time" />
 
-                            </div>
-                            <div class="col-6">
-                                <div>
-                                    <button>
-                                        <img class="img-fluid" src="/images/pexels-mertal-22487122_optimized.jpg" alt="">
-                                    </button>
-                                    
-                                </div>
-                                <div></div>
-                            </div>
-                        </div>
-     
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Create Listing</button>
-                    </div>
+                <label for="tag" id="tag-label">Tag</label>
+                <input id="tag" class="form-control" type="input" name="tag" />
+              </div>
+              <div class="col-6">
+                <div>
+                  <button>
+                    <img
+                      class="img-fluid"
+                      src="/images/pexels-mertal-22487122_optimized.jpg"
+                      alt=""
+                    />
+                  </button>
                 </div>
+                <div></div>
+              </div>
             </div>
-
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-primary"
+              data-bs-dismiss="modal"
+            >
+              Create Listing
+            </button>
+          </div>
         </div>
-
-    </main>
-
-
+      </div>
+    </div>
+  </main>
 </html>

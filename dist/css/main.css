@@ -60,20 +60,20 @@ input {
   background-color: var(--light-black-2);
 }
 
-input[type="time"]::-webkit-calendar-picker-indicator {
+input[type=time]::-webkit-calendar-picker-indicator {
   filter: invert(50%); /* Adjust color by inverting */
 }
 
-input[type="time"]::-webkit-calendar-picker-indicator:hover {
+input[type=time]::-webkit-calendar-picker-indicator:hover {
   filter: invert(30%);
 }
 
-input[type="date"]::-webkit-calendar-picker-indicator {
+input[type=date]::-webkit-calendar-picker-indicator {
   filter: invert(50%);
   cursor: pointer;
 }
 
-input[type="date"]::-webkit-calendar-picker-indicator:hover {
+input[type=date]::-webkit-calendar-picker-indicator:hover {
   filter: invert(30%);
 }
 

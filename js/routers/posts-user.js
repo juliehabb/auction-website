@@ -1,5 +1,7 @@
 import { readListingsByUser } from "../api/listing/read.js";
 import { fetchUserCredits } from "../api/profile/credits.js";
+import { updateAvatar } from "../api/profile/avatar.js";
+import { createAvatarUpdateModal } from "../ui/modals.js";
 
 
 
@@ -125,10 +127,55 @@ async function displayUserCredits() {
     }
 }
 
-// Ensure the DOM is fully loaded before calling functions
+
+
+
+
+function initializeAvatarUpdateFeature() {
+    createAvatarUpdateModal();
+
+    const avatarImg = document.querySelector("#avatarImage");
+    if (avatarImg) {
+        avatarImg.addEventListener("click", () => {
+            const avatarModal = new bootstrap.Modal(document.getElementById("avatarModal"));
+            avatarModal.show();
+        });
+    }
+
+    const avatarForm = document.getElementById("avatarUpdateForm");
+    if (avatarForm) {
+        avatarForm.addEventListener("submit", async (event) => {
+            event.preventDefault();
+
+            const avatarUrl = document.getElementById("avatarUrl").value.trim();
+
+            if (!avatarUrl) {
+                alert("Please enter a valid URL.");
+                return;
+            }
+
+            try {
+                const updatedProfile = await updateAvatar(avatarUrl);
+                alert("Avatar updated successfully!");
+
+                // Update the avatar image on the page
+                if (avatarImg) avatarImg.src = updatedProfile.data.avatar.url;
+
+                // Close the modal
+                const avatarModal = bootstrap.Modal.getInstance(document.getElementById("avatarModal"));
+                avatarModal.hide();
+            } catch (error) {
+                console.error("Error updating avatar:", error);
+                alert("Failed to update avatar. Please try again.");
+            }
+        });
+    }
+}
+
+
 document.addEventListener("DOMContentLoaded", () => {
-    displayUserCredits(); // Call displayUserCredits when the DOM is ready
-    populateListingsTable(); // Call populateListingsTable when the DOM is ready
+    initializeAvatarUpdateFeature();
+    displayUserCredits(); 
+    populateListingsTable(); 
+    
 });
-
-

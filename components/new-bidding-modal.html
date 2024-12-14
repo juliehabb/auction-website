@@ -7,9 +7,10 @@
       href="/node_modules/bootstrap/dist/css/bootstrap.min.css"
     />
     <link rel="stylesheet" href="/dist/css/main.css" />
+    <script type="module" src="/js/ui/Listing/create.js" ></script> 
   </head>
   <main>
-    <div class="modal" tabindex="-1" style="display: block">
+    <div class="moda" tabindex="-1" style="display: block">
       <div class="modal-dialog">
         <div class="modal-content">
           <div class="modal-header">
@@ -24,7 +25,8 @@
           <div class="modal-body d-flex container-fluid">
             <div class="row">
               <div class="col-6">
-                <label for="title" id="title-label">Title</label>
+                <form id="new-listing-form">
+                  <label for="title" id="title-label">Title</label>
                 <input
                   id="title"
                   class="form-control"
@@ -58,8 +60,24 @@
                 <input id="endTime" class="form-control" type="time" />
 
                 <label for="tag" id="tag-label">Tag</label>
-                <input id="tag" class="form-control" type="input" name="tag" />
+                <input id="tag" class="form-control" type="input" name="tags" />
+
+                <label for="mediaField">Add photo</label>
+                <input type="url" name="media" class="form-control" id="mediaField" required>
+
+                <button
+                type="submit"
+                class="btn btn-primary"
+                data-bs-dismiss="modal"
+              >
+                Create Listing
+              </button>
               </div>
+
+              
+
+                </form>
+                
               <div class="col-6">
                 <div>
                   <button>
@@ -75,13 +93,7 @@
             </div>
           </div>
           <div class="modal-footer">
-            <button
-              type="button"
-              class="btn btn-primary"
-              data-bs-dismiss="modal"
-            >
-              Create Listing
-            </button>
+
           </div>
         </div>
       </div>

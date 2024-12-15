@@ -53,16 +53,48 @@ async function fetchAndDisplayListing() {
             if (placeBidButton) placeBidButton.disabled = true; // Disable "Place Bid" button
         }
 
-        // Update the main image
-        const primaryMedia = listing.media?.[0];
-        const imgElement = document.querySelector(".img-listing");
-        if (primaryMedia) {
-            imgElement.src = primaryMedia.url;
-            imgElement.alt = primaryMedia.alt || "Listing image";
+        // Update the main image and thumbnails
+        const media = listing.media || [];
+        const mainImageElement = document.querySelector(".main-image");
+        const thumbnailsContainer = document.querySelector(".thumbnails-container");
+
+        // Populate main image
+        if (media.length > 0) {
+            mainImageElement.src = media[0].url;
+            mainImageElement.alt = media[0].alt || "Listing image";
         } else {
-            imgElement.src = "/images/default-image.jpg";
-            imgElement.alt = "Default image";
+            mainImageElement.src = "/images/default-image.jpg";
+            mainImageElement.alt = "Default image";
         }
+
+        // Populate thumbnails dynamically
+        thumbnailsContainer.innerHTML = ""; // Clear existing thumbnails
+        media.forEach((image, index) => {
+            const thumbnail = document.createElement("img");
+            thumbnail.src = image.url;
+            thumbnail.alt = image.alt || `Thumbnail ${index + 1}`;
+            thumbnail.className = "thumbnail";
+            thumbnail.width = 90;
+
+            // Highlight the first thumbnail by default
+            if (index === 0) {
+                thumbnail.classList.add("active-thumbnail");
+            }
+
+            // Add click event to update the main image
+            thumbnail.addEventListener("click", () => {
+                mainImageElement.src = image.url;
+                mainImageElement.alt = image.alt || "Listing image";
+
+                // Update active thumbnail
+                document
+                    .querySelectorAll(".thumbnail")
+                    .forEach((thumb) => thumb.classList.remove("active-thumbnail"));
+                thumbnail.classList.add("active-thumbnail");
+            });
+
+            thumbnailsContainer.appendChild(thumbnail);
+        });
 
         // Replace seller's name dynamically
         const sellerNameElement = document.querySelector(".more-info .d-flex a p");

@@ -1,50 +1,70 @@
-
-<!DOCTYPE html>
+<!doctype html>
 
 <html lang="en">
-    <head>
-        <link rel="stylesheet" href="/node_modules/bootstrap/dist/css/bootstrap.min.css"/>
-        <link rel="stylesheet" href="/dist/css/main.css"/>
-    </head>
-    <main>
-        <div  class="modal" tabindex="-1" style="display: block;" >
-            <div class="modal-dialog">
-                <div class="modal-content" >
-                    <div class="modal-header d-flex flex-column ">
-                        
-                        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close" ></button>
-                        <div class=" d-flex flex-column justify-content-center align-items-center">
-                            <h4 class="modal-title pb-2">Place Bid</h4>
-                            <div class="input-group mb-3  ">
-                                <button class="btn btn-outline-secondary" type="button">-</button>
-                                <input type="text" class="form-control" placeholder="100" aria-label="amount" aria-describedby="button-amount">
-                                <button class="btn btn-outline-secondary" type="button">+</button>
-
-                            </div>
-                        </div>
-                    </div>
-                    <div class="modal-body">
-                        <div class="">
-                            <div class=" d-flex justify-content-between">
-                                <p>Auksjonsgebyr</p>
-                                <p>3 USD</p>
-                            </div>
-                            <div class=" d-flex justify-content-between">
-                                <p>Shipping</p>
-                                <p>5 USD</p>
-                            </div>
-                        </div>
-
-                    </div>
-                    <div class="modal-footer  d-flex flex-column align-items-center d-grid ">
-                        <button type="button" class="btn btn-primary w-100 " data-bs-dismiss="modal">Place Bid</button>
-                    </div>
-                </div>
+  <head>
+    <link
+      rel="stylesheet"
+      href="/node_modules/bootstrap/dist/css/bootstrap.min.css"
+    />
+    <link rel="stylesheet" href="/dist/css/main.css" />
+  </head>
+  <main>
+    <div class="modal" tabindex="-1" style="display: block">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header d-flex flex-column">
+            <button
+              type="button"
+              class="btn-close btn-close-white"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+            <div
+              class="d-flex flex-column justify-content-center align-items-center"
+            >
+              <h4 class="modal-title pb-2">Place Bid</h4>
+              <div class="input-group mb-3">
+                <button class="btn btn-outline-secondary" type="button">
+                  -
+                </button>
+                <input
+                  type="text"
+                  class="form-control"
+                  placeholder="100"
+                  aria-label="amount"
+                  aria-describedby="button-amount"
+                />
+                <button class="btn btn-outline-secondary" type="button">
+                  +
+                </button>
+              </div>
             </div>
-
+          </div>
+          <div class="modal-body">
+            <div class="">
+              <div class="d-flex justify-content-between">
+                <p>Auksjonsgebyr</p>
+                <p>3 USD</p>
+              </div>
+              <div class="d-flex justify-content-between">
+                <p>Shipping</p>
+                <p>5 USD</p>
+              </div>
+            </div>
+          </div>
+          <div
+            class="modal-footer d-flex flex-column align-items-center d-grid"
+          >
+            <button
+              type="button"
+              class="btn btn-primary w-100"
+              data-bs-dismiss="modal"
+            >
+              Place Bid
+            </button>
+          </div>
         </div>
-
-    </main>
-
-
+      </div>
+    </div>
+  </main>
 </html>

@@ -1,12 +1,12 @@
 @import url(/node_modules/bootstrap/scss/bootstrap.scss);
 :root {
   --background-color: #202020;
-  --primary-color: #FEE877;
+  --primary-color: #fee877;
   --primary-color-text: #d4be4c;
   --primary-color-hover: #e7d05c;
   --text-color: #ffffff;
   --text-color-2: #202020;
-  --input-box: #F5F3EE;
+  --input-box: #f5f3ee;
   --light-black: #272727;
   --light-black-2: #383838;
   --light-black-3: #464646;
@@ -122,6 +122,13 @@ header {
   width: 100%;
 }
 
+.card-title {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 100%;
+}
+
 .highlight-yellow {
   color: var(--primary-color);
 }
@@ -130,7 +137,7 @@ header {
 .table {
   --bs-table-bg: var(--light-black-2);
   --bs-table-color: white;
-  --bs-tale-hover-bg:var(--light-black);
+  --bs-tale-hover-bg: var(--light-black);
   --bs-tale-hover-color: white;
   border-color: var(--background-color);
 }
@@ -141,7 +148,7 @@ header {
 .table-light {
   --bs-table-bg: var(--light-black-3);
   --bs-table-color: white;
-  --bs-tale-hover-bg:var(--light-black);
+  --bs-tale-hover-bg: var(--light-black);
   --bs-tale-hover-color: white;
   border-color: var(--background-color);
 }

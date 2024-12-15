@@ -1,6 +1,34 @@
 import { readListings, searchListings } from "../api/listing/read.js";
 
-
+/**
+ * Populate the listings container with active and valid listings.
+ * 
+ * This function fetches all listings or filtered listings based on a query,
+ * removes expired listings, and skips listings without valid images. It then
+ * dynamically creates and displays cards for valid listings in the DOM. Users
+ * can click on a listing card to view its details or place a bid via a "Place Bid" button.
+ * 
+ * @async
+ * @function populateListings
+ * @param {string} [query=""] - The search query to filter listings. If empty, fetches all listings.
+ * @returns {Promise<void>} Resolves when listings are populated or displays an appropriate message if none are available.
+ * 
+ * @example
+ * // Fetch and display all listings
+ * populateListings();
+ * 
+ * @example
+ * // Fetch and display listings filtered by a query
+ * populateListings("Art");
+ * 
+ * @throws Will log an error and display an error message in the DOM if there is an issue with fetching or displaying listings.
+ * 
+ * Functionality:
+ * - Fetches all listings or filtered listings using `searchListings` or `readListings`.
+ * - Filters out listings that have expired or do not have valid images.
+ * - Dynamically creates cards for each valid listing and appends them to the DOM.
+ * - Adds event listeners for clicking on listing cards and "Place Bid" buttons.
+ */
 export async function populateListings(query = "") {
     try {
         const listings = query

@@ -2,6 +2,31 @@ import { readListing, placeBid } from "../api/listing.js";
 import { createBidModal, showBidModal } from "../ui/modals.js";
 import { isAuthenticated, requireAuthentication } from "../api/auth/authUtils.js";
 
+/**
+ * Fetch and display listing details on the listing details page.
+ *
+ * This function retrieves a specific listing based on its ID from the URL query parameters
+ * and dynamically populates the page with the listing's data. It handles various aspects
+ * such as displaying the primary image, seller information, bid history, and managing
+ * the "Place Bid" button based on the user's authentication state or if the listing has ended.
+ *
+ * @async
+ * @function fetchAndDisplayListing
+ *
+ * @example
+ * // Automatically invoked on page load
+ * fetchAndDisplayListing();
+ *
+ * Features:
+ * - Fetches the listing using its ID from the URL.
+ * - Disables the "Place Bid" button if the auction has ended.
+ * - Updates the primary image and alt text for the listing.
+ * - Displays the seller's name, description, and time left.
+ * - Populates the bid history table with the list of bids.
+ * - Enables or disables the "Place Bid" button based on the user's authentication status.
+ *
+ * @throws Logs an error and displays an error message in the DOM if fetching or displaying the listing fails.
+ */
 async function fetchAndDisplayListing() {
     const params = new URLSearchParams(window.location.search);
     const listingId = params.get("id");
@@ -119,11 +144,8 @@ document.addEventListener("click", (event) => {
     }
 });
 
-// Initialize the page
 document.addEventListener("DOMContentLoaded", () => {
-    // Ensure the modal is created in the DOM
     createBidModal();
 
-    // Fetch and display listing details
     fetchAndDisplayListing();
 });

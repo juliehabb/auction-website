@@ -4,7 +4,24 @@ import { updateAvatar } from "../api/profile/avatar.js";
 import { createAvatarUpdateModal } from "../ui/modals.js";
 import { isAuthenticated } from "../api/auth/authUtils.js";
 
-
+/**
+ * Populate the table with the user's listings.
+ *
+ * This function fetches the listings of the authenticated user from the API and dynamically
+ * populates the table in the DOM. Each listing includes columns for the image, title,
+ * end date, highest bid, and action buttons for editing and deleting the listing.
+ *
+ * @async
+ * @function populateListingsTable
+ * @throws {Error} Throws an error if the API call or DOM manipulation fails.
+ *
+ * @example
+ * try {
+ *     await populateListingsTable();
+ * } catch (error) {
+ *     console.error("Failed to populate listings:", error);
+ * }
+ */
 export async function populateListingsTable() {
     try {
         const listings = await readListingsByUser();
@@ -93,6 +110,25 @@ export async function populateListingsTable() {
     }
 }
 
+/**
+ * Display the user's available credits on the profile page.
+ *
+ * This function retrieves the user's profile from local storage, fetches their credit balance
+ * from the API, and updates the relevant DOM element with the credits.
+ *
+ * @async
+ * @function displayUserCredits
+ * @throws {Error} Throws an error if the username is not found in local storage, if the API
+ * response is invalid, or if the DOM element for displaying credits is missing.
+ *
+ * @example
+ * try {
+ *     await displayUserCredits();
+ * } catch (error) {
+ *     console.error("Error displaying user credits:", error);
+ * }
+ */
+
 async function displayUserCredits() {
     try {
         // Retrieve the username from local storage
@@ -125,6 +161,18 @@ async function displayUserCredits() {
     }
 }
 
+/**
+ * Initialize the avatar update feature.
+ *
+ * This function creates the avatar update modal, attaches event listeners to the avatar image,
+ * and handles the avatar update form submission. It updates the avatar both on the server
+ * and on the profile page upon successful submission.
+ *
+ * @function initializeAvatarUpdateFeature
+ *
+ * @example
+ * initializeAvatarUpdateFeature();
+ */
 
 function initializeAvatarUpdateFeature() {
     createAvatarUpdateModal();
@@ -166,6 +214,19 @@ function initializeAvatarUpdateFeature() {
         });
     }
 }
+
+/**
+ * Update the profile page dynamically based on the user's authentication status.
+ *
+ * If the user is authenticated, the page will display the avatar update feature, user credits,
+ * and their listings. If the user is not authenticated, a message is displayed prompting
+ * the user to log in.
+ *
+ * @function updateProfilePage
+ *
+ * @example
+ * updateProfilePage();
+ */
 
 export function updateProfilePage() {
     const mainElement = document.querySelector("main");

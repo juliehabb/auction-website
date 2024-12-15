@@ -36,30 +36,44 @@ export async function createKey() {
 createKey();
 
 
-/** 
- * Creates a new post using the social API.
- * 
+/**
+ * Create a new auction listing.
+ *
+ * This function sends a POST request to the API to create a new auction listing. 
+ * It requires the listing details, including the title, description, end date, tags, 
+ * and media (optional). The user must be authenticated to create a listing.
+ *
  * @async
- * @function createPost
- * @param {Object} postDetails - The details of the post to be created.
- * @param {string} postDetails.title - The title of the post.
- * @param {string} postDetails.body - The body content of the post.
- * @param {Array<string>} postDetails.tags - An array of tags associated with the post.
- * @param {Array<string>} [postDetails.media] - An optional array of media URLs associated with the post.
- * @returns {Promise<Object>} A promise that resolves to the created post object.
- * 
+ * @function createListing
+ * @param {Object} listingDetails - The details of the new listing.
+ * @param {string} listingDetails.title - The title of the listing.
+ * @param {string} listingDetails.description - A detailed description of the listing.
+ * @param {string} listingDetails.endsAt - The end date and time of the auction (ISO format).
+ * @param {Array<string>} [listingDetails.tags=[]] - Tags for the listing (optional).
+ * @param {Array<string>} [listingDetails.media=[]] - Array of media URLs for the listing (optional).
+ * @returns {Promise<Object>} Resolves to the newly created listing object if successful.
+ *
+ * @throws {Error} Throws an error if the listing creation request fails or the response is not OK.
+ *
  * @example
- * // Example usage:
- * createPost({
- *   title: 'My First Post',
- *   body: 'This is the body of my first post.',
- *   tags: ['introduction', 'firstPost'],
- *   media: ['https://example.com/image.jpg']
- * }).then(post => {
- *   console.log('Post created:', post);
- * }).catch(error => {
- *   console.error('Error creating post:', error);
- * });
+ * try {
+ *     const newListing = await createListing({
+ *         title: "Vintage Painting",
+ *         description: "A beautiful vintage painting from the 18th century.",
+ *         endsAt: "2024-12-25T12:00:00Z",
+ *         tags: ["Art", "Vintage"],
+ *         media: ["https://example.com/image.jpg"],
+ *     });
+ *     console.log("Listing created successfully:", newListing);
+ * } catch (error) {
+ *     console.error("Failed to create listing:", error);
+ * }
+ *
+ * Features:
+ * - Sends a POST request to the API endpoint for creating listings.
+ * - Uses `authFetch` to ensure the user is authenticated.
+ * - Validates and serializes the listing data before sending the request.
+ * - Handles server response and logs the created listing.
  */
 export async function createListing({ title, description, endsAt, tags, media }) {
     const createListingUrl = API_AUCTION_LISTINGS;

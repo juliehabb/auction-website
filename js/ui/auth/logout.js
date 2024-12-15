@@ -55,11 +55,11 @@ export function updateListingButton() {
         // Add "+ New Listing" button if the user is authenticated
         const newListingButton = document.createElement("button");
         newListingButton.type = "button";
-        newListingButton.className = "btn btn-primary ml-3";
+        newListingButton.className = "btn btn-primary ml-3 new-listing";
         newListingButton.textContent = "+ New Listing";
 
         newListingButton.addEventListener("click", () => {
-            window.location.href = "/pages/new-listing.html"; // Redirect to the new listing page
+        
         });
 
         newListingContainer.appendChild(newListingButton);
@@ -71,7 +71,7 @@ export function updateListingButton() {
         loginButton.textContent = "Log In";
 
         loginButton.addEventListener("click", () => {
-            window.location.href = "/login.html"; // Redirect to the login page
+            window.location.href = "pages/login.html"; 
         });
 
         newListingContainer.appendChild(loginButton);

@@ -16,23 +16,21 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 /**
- * Handles the creation of a new blog post.
+ * Handle the creation of a new listing.
  *
- * This function is triggered on the submission of the post creation form.
- * It retrieves the form data, constructs a post object, and sends it to the 
- * API to create a new post. If the post creation is successful, it returns 
- * the created post object. In case of an error, it logs the error message 
- * to the console.
+ * This function is triggered when the new listing form is submitted. It collects the form data,
+ * validates the input, and sends the data to the API to create a new listing. If successful,
+ * the page reloads to reflect the changes. If an error occurs, an alert is shown to the user.
  *
  * @async
- * @function onCreatePost
- * @param {Event} event - The event object representing the form submission.
- * @returns {Promise<Object|null>} A promise that resolves to the created post object, or null if an error occurred.
+ * @function onCreateListing
+ * @param {Event} event - The event object triggered by the form submission.
+ * @throws {Error} Logs an error if the API call fails or the input validation fails.
  *
  * @example
- * // Assuming there is a form with the name "createPost"
- * document.querySelector('form[name="createPost"]').addEventListener('submit', onCreatePost);
+ * document.getElementById("new-listing-form").addEventListener("submit", onCreateListing);
  */
+
 export async function onCreateListing(event) {
     event.preventDefault();
 

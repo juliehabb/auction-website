@@ -3,24 +3,25 @@ import { API_AUCTION_PROFILES} from "../constants.js";
 import { authFetch } from "../../ui/auth/authfetch.js"
 
 /**
- * Retrieves a singular post from the API using the specified post ID.
- * 
+ * Fetch a single auction listing with additional details.
+ *
+ * This function retrieves detailed information about a specific listing,
+ * including its seller and bid history.
+ *
  * @async
- * @function readPost
- * @param {string} id - The ID of the post to retrieve.
- * @returns {Promise<Object>} A promise that resolves to the post object.
- * 
- * @throws {Error} Throws an error if the post ID is not provided.
- * 
+ * @function readListing
+ * @param {string} id - The ID of the listing to fetch.
+ * @returns {Promise<Object>} A promise that resolves to the listing details.
+ *
+ * @throws {Error} Throws an error if the listing ID is not provided or the request fails.
+ *
  * @example
- * // Example usage:
- * readPost('12345')
- *   .then(post => {
- *     console.log('Post details:', post);
- *   })
- *   .catch(error => {
- *     console.error('Error fetching post:', error);
- *   });
+ * try {
+ *     const listing = await readListing("12345");
+ *     console.log("Listing Details:", listing);
+ * } catch (error) {
+ *     console.error("Error fetching listing:", error);
+ * }
  */
 export async function readListing(id) {
     const getListingUrl = `${API_AUCTION_LISTINGS}/${id}?_seller=true&_bids=true`;
@@ -47,25 +48,29 @@ export async function readListing(id) {
 
 
 /**
- * Retrieves all posts from the API with optional pagination.
- * 
+ * Fetch a paginated list of auction listings.
+ *
+ * This function retrieves a list of auction listings, optionally paginated
+ * and filtered by tags.
+ *
  * @async
- * @function readPosts
- * @param {number} [limit=12] - The maximum number of posts to retrieve.
- * @param {number} [page=1] - The page number for pagination.
- * @param {string} [tag] - An optional tag to filter the posts.
- * @returns {Promise<Array<Object>>} A promise that resolves to an array of post objects.
- * 
+ * @function readListings
+ * @param {number} [limit=12] - The number of listings to retrieve per page.
+ * @param {number} [page=1] - The page number to retrieve.
+ * @param {string} [tag] - Optional tag filter to narrow the results.
+ * @returns {Promise<Array<Object>>} A promise that resolves to an array of listings.
+ *
+ * @throws {Error} Throws an error if the request fails.
+ *
  * @example
- * // Example usage:
- * readPosts(10, 2)
- *   .then(posts => {
- *     console.log('Posts:', posts);
- *   })
- *   .catch(error => {
- *     console.error('Error fetching posts:', error);
- *   });
+ * try {
+ *     const listings = await readListings(10, 2, "Art");
+ *     console.log("Listings:", listings);
+ * } catch (error) {
+ *     console.error("Error fetching listings:", error);
+ * }
  */
+
 export async function readListings(limit = 12, page = 1, tag) {
     const getListingsUrl = API_AUCTION_LISTINGS;
 
@@ -83,29 +88,30 @@ export async function readListings(limit = 12, page = 1, tag) {
 
 
 /**
- * Retrieves posts created by a specific user from the API.
- * If the username is not provided, it retrieves it from localStorage.
- * 
+ * Fetch a list of auction listings created by a specific user.
+ *
+ * This function retrieves listings associated with the authenticated user
+ * or a specified username. It supports pagination and filtering.
+ *
  * @async
- * @function readPostsByUser
- * @param {string} [username] - The username of the user whose posts are to be retrieved.
- * @param {number} [limit=12] - The maximum number of posts to retrieve.
- * @param {number} [page=1] - The page number for pagination.
- * @param {string} [tag] - An optional tag to filter the posts.
- * @returns {Promise<Array<Object>>} A promise that resolves to an array of post objects created by the specified user.
- * 
- * @throws {Error} Throws an error if the username is not found in localStorage.
- * 
+ * @function readListingsByUser
+ * @param {string} [username] - The username whose listings are to be fetched. If not provided, the function retrieves the username from localStorage.
+ * @param {number} [limit=12] - The number of listings to retrieve per page.
+ * @param {number} [page=1] - The page number to retrieve.
+ * @param {string} [tag] - Optional tag filter to narrow the results.
+ * @returns {Promise<Array<Object>>} A promise that resolves to an array of listings by the user.
+ *
+ * @throws {Error} Throws an error if the username is not provided or the request fails.
+ *
  * @example
- * // Example usage:
- * readPostsByUser('john_doe')
- *   .then(posts => {
- *     console.log('User posts:', posts);
- *   })
- *   .catch(error => {
- *     console.error('Error fetching user posts:', error);
- *   });
+ * try {
+ *     const userListings = await readListingsByUser("username");
+ *     console.log("User Listings:", userListings);
+ * } catch (error) {
+ *     console.error("Error fetching user listings:", error);
+ * }
  */
+
 export async function readListingsByUser(username, limit = 12, page = 1, tag) {
     // If username is not provided, retrieve it from localStorage
     const profile = JSON.parse(localStorage.getItem("profile"));

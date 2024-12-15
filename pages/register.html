@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="Register" content="Create a new account.">
+        <title>Register</title>
+        <link rel="stylesheet" href="/node_modules/bootstrap/dist/css/bootstrap.min.css"/>
+        <link rel="stylesheet" href="/dist/css/main.css"/>
+    </head>
+
+    <body>
+        <header>
+
+        </header>
+        <main>
+            <div class="container vh-100">
+                <div class="row vh-100 align-items-center">
+                    
+                    <section class="col-6 d-flex flex-column justify-self-center">
+                        <div class="logo-container">
+                            <img class="logo" src="../Images/Logo_Placeholder.png" alt="Logo">
+                        </div>
+                        <h1>Register</h1>
+                        <form class="register-form" id="register-form" >
+                            <div class="pb-2 d-flex flex-column">
+                                <label for="name" id="name-label" > Name</label>
+                                <input id="name" class="form-control" name="name" type="text" >
+
+                            </div>
+                            <div class="pb-2 d-flex flex-column">
+                                <label for="email" id="email-label">Email</label>
+                                <input id="email" class="form-control" name="email" type="email" >
+                            </div>
+                            <div class="pb-2 d-flex flex-column">
+                                <label for="password" id="password-label">Password</label>
+                                <input id="password" class="form-control" name="password" type="password">
+                            </div>
+                            <a href="/account/login.html">
+                                <input id="register" type="submit" value="SIGN UP" class="btn-primary mt-3">
+                            </a>
+                        </form>
+                        <a class="underlined-link" href="./login.html">Have a user? Log in.</a>
+                    </section>
+                    <section class="col-6"></section>
+                </div>
+            </div>
+        </main>
+        <footer>
+        </footer>
+    </body>
+</html>

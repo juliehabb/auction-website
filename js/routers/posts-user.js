@@ -2,7 +2,7 @@ import { readListingsByUser } from "../api/listing/read.js";
 import { fetchUserCredits } from "../api/profile/credits.js";
 import { updateAvatar } from "../api/profile/avatar.js";
 import { createAvatarUpdateModal } from "../ui/modals.js";
-
+import { isAuthenticated } from "../api/auth/authUtils.js";
 
 
 export async function populateListingsTable() {
@@ -93,8 +93,6 @@ export async function populateListingsTable() {
     }
 }
 
-
-
 async function displayUserCredits() {
     try {
         // Retrieve the username from local storage
@@ -126,9 +124,6 @@ async function displayUserCredits() {
         console.error("Error displaying user credits:", error);
     }
 }
-
-
-
 
 
 function initializeAvatarUpdateFeature() {
@@ -172,10 +167,25 @@ function initializeAvatarUpdateFeature() {
     }
 }
 
+export function updateProfilePage() {
+    const mainElement = document.querySelector("main");
 
-document.addEventListener("DOMContentLoaded", () => {
-    initializeAvatarUpdateFeature();
-    displayUserCredits(); 
-    populateListingsTable(); 
-    
-});
+    if (!mainElement) {
+        console.error("Main element not found.");
+        return;
+    }
+
+    if (!isAuthenticated()) {
+        mainElement.innerHTML = `
+            <section class="container-md light-black-2 mb-5 mt-5 text-center">
+                <p class="fs-4">You don't have a user yet. Please <a href="/login.html">log in</a> to view your profile.</p>
+            </section>
+        `;
+    } else {
+        initializeAvatarUpdateFeature();
+        displayUserCredits();
+        populateListingsTable();
+    }
+}
+
+updateProfilePage();

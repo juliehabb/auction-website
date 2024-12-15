@@ -52,6 +52,7 @@ export async function login({
     storage.save("apiKey", API_KEY);
 
     alert("You have been logged in.")
+    window.location.href = "../index.html";
   } else {
     alert("login failed: " + result.message);
   }

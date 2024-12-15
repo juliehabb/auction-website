@@ -12,223 +12,225 @@
     ></script>
     <link
       rel="stylesheet"
-      href="/node_modules/bootstrap/dist/css/bootstrap.min.css"
+      href="/dist/css/bootstrap.min.css"
     />
     <link rel="stylesheet" href="/dist/css/main.css" />
     <script type="module" src="/js/routers/post-details.js" ></script> 
   </head>
-  <main>
-    <header>
-      <nav class="navbar navbar-expand-lg mb-3">
-        <div class="container-fluid">
-          <a class="navbar-brand" href="/index.html">Navbar</a>
-          <button
-            class="navbar-toggler"
-            type="button"
-            data-bs-toggle="collapse"
-            data-bs-target="#navbarSupportedContent"
-            aria-controls="navbarSupportedContent"
-            aria-expanded="false"
-            aria-label="Toggle navigation"
-          >
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-              <li class="nav-item">
-                <a
-                  class="nav-link active text-white custom-white"
-                  aria-current="page"
-                  href="#"
-                  >Home</a
-                >
-              </li>
-            </ul>
-            <div class="navbar-nav align-items-center">
-              <form class="d-flex mb-0 mr-1 p-4" role="search">
-                <div class="input-group mb-0">
-                  <input
-                    type="text"
-                    class="form-control"
-                    placeholder="Search"
-                    aria-label="Search"
-                    aria-describedby="button-addon2"
-                  />
-                  <button
-                    class="btn btn-outline-secondary mr-3"
-                    type="button"
-                    id="button-addon2"
-                  >
-                    <i class="fa-solid fa-magnifying-glass"></i>
-                  </button>
-                </div>
-              </form>
-              <div class="ml-3">
-                <button type="button" class="btn btn-primary ml-3">
-                  + New Listing
-                </button>
-              </div>
-
+  <body>
+    <main>
+      <header>
+        <nav class="navbar navbar-expand-lg mb-3">
+          <div class="container-fluid">
+            <a class="navbar-brand" href="/index.html">Navbar</a>
+            <button
+              class="navbar-toggler"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#navbarSupportedContent"
+              aria-controls="navbarSupportedContent"
+              aria-expanded="false"
+              aria-label="Toggle navigation"
+            >
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
               <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                <li class="nav-item dropdown">
+                <li class="nav-item">
                   <a
-                    class="nav-link dropdown-toggle mr-3"
+                    class="nav-link active text-white custom-white"
+                    aria-current="page"
                     href="#"
-                    role="button"
-                    data-bs-toggle="dropdown"
-                    aria-expanded="false"
+                    >Home</a
                   >
-                    <img
-                      class="rounded-circle"
-                      width="40rem"
-                      height="40rem"
-                      src="/images/pexels-mertal-22487122_optimized.jpg
-                              "
-                      alt="Profile photo"
-                    />
-                  </a>
-                  <ul class="dropdown-menu">
-                    <li><a class="dropdown-item" href="#">Profile</a></li>
-                    <li><a class="dropdown-item" href="#">Log out</a></li>
-                    <li><hr class="dropdown-divider" /></li>
-                    <li>
-                      <a class="dropdown-item" href="#">Something else here</a>
-                    </li>
-                  </ul>
                 </li>
               </ul>
-            </div>
-          </div>
-        </div>
-      </nav>
-    </header>
-    <main class="container-fluid pt-6">
-      <div class="row m-2">
-        <!--Img section-->
-        <section class="col-sm-6 d-flex justify-content-center">
-          <div class=" ">
-            <div>
-              <img
-                class="float-start img-listing"
-                height="600"
-                src="/images/pexels-mertal-22487122_optimized.jpg"
-                alt=""
-              />
-            </div>
-            <div class="pt-2">
-              <img
-                width="90"
-                src="/images/pexels-mertal-22487122_optimized.jpg"
-                alt=""
-              />
-              <img
-                width="90"
-                src="/images/pexels-mertal-22487122_optimized.jpg"
-                alt=""
-              />
-              <img
-                width="90"
-                src="/images/pexels-mertal-22487122_optimized.jpg"
-                alt=""
-              />
-              <img
-                width="90"
-                src="/images/pexels-mertal-22487122_optimized.jpg"
-                alt=""
-              />
-            </div>
-          </div>
-        </section>
-        <!--Info section-->
-        <section class="col-md-6 d-flex align-items-center light-black-2 p-4">
-          <div>
-            <div>
-              <div class="heading">
-                <div class="d-flex align-items-center">
-                  <h1>Sculpture</h1>
-                  <p class="pb-0 mb-0 ms-2 highlight-yellow">
-                    Time left: 01h 20t 11sek
-                  </p>
-                </div>
-                <div>
-                  <i></i>
-                </div>
-              </div>
-              <div class="place">
-                <p>Bergen, Vestland</p>
-              </div>
-              <div class="paragraph">
-                <p>
-                  Lorem ipsum dolor sit amet consectetur. Morbi sit egestas
-                  sapien tristique molestie leo. Sagittis ut non integer auctor
-                  facilisis vitae mi quis massa. Nunc non erat fringilla quam
-                  diam tortor nibh nec. Quis suspendisse odio est et ipsum
-                  commodo.
-                </p>
-              </div>
-              <div class="place-bid d-flex">
-                <div>
-                  <div class="input-group mb-3">
-                    <button class="btn btn-outline-secondary" type="button">
-                      -
-                    </button>
+              <div class="navbar-nav align-items-center">
+                <form class="d-flex mb-0 mr-1 p-4" role="search">
+                  <div class="input-group mb-0">
                     <input
                       type="text"
-                      class="form-control bid-amount"
-                      placeholder="100"
-                      aria-label="amount"
-                      aria-describedby="button-amount"
+                      class="form-control"
+                      placeholder="Search"
+                      aria-label="Search"
+                      aria-describedby="button-addon2"
                     />
-                    <button class="btn btn-outline-secondary" type="button">
-                      +
+                    <button
+                      class="btn btn-outline-secondary mr-3"
+                      type="button"
+                      id="button-addon2"
+                    >
+                      <i class="fa-solid fa-magnifying-glass"></i>
                     </button>
                   </div>
+                </form>
+                <div class="ml-3">
+                  <button type="button" class="btn btn-primary ml-3">
+                    + New Listing
+                  </button>
                 </div>
-                <div>
-                  <button class="btn btn-primary ms-2">Place bid</button>
-                </div>
+  
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                  <li class="nav-item dropdown">
+                    <a
+                      class="nav-link dropdown-toggle mr-3"
+                      href="#"
+                      role="button"
+                      data-bs-toggle="dropdown"
+                      aria-expanded="false"
+                    >
+                      <img
+                        class="rounded-circle"
+                        width="40rem"
+                        height="40rem"
+                        src="/images/pexels-mertal-22487122_optimized.jpg
+                                "
+                        alt="Profile photo"
+                      />
+                    </a>
+                    <ul class="dropdown-menu">
+                      <li><a class="dropdown-item" href="#">Profile</a></li>
+                      <li><a class="dropdown-item" href="#">Log out</a></li>
+                      <li><hr class="dropdown-divider" /></li>
+                      <li>
+                        <a class="dropdown-item" href="#">Something else here</a>
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
               </div>
-              <div class="more-info">
-                <div class="d-flex">
-                  <p>Seller:</p>
-                  <a href="#">
-                    <p class="ms-2 seller-name">Amalie Doe</p>
-                  </a>
-                </div>
-                <p>Auction Fee: 3 USD</p>
-              </div>
-            </div>
-            <div class="big-history light-black-3 p-3 mt-5">
-              <h3>Bid History</h3>
-              <table class="table table-light">
-                <thead>
-                  <tr>
-                    <th scope="col">Amount</th>
-                    <th scope="col">Bidder</th>
-                    <th scope="col">Time</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td>80 USD</td>
-                    <td>Coolname43</td>
-                    <td>12.11.24 10:11</td>
-                  </tr>
-                  <tr>
-                    <td>70 USD</td>
-                    <td>Awesomename67</td>
-                    <td>12.11.24 10:02</td>
-                  </tr>
-                </tbody>
-              </table>
             </div>
           </div>
-        </section>
-      </div>
+        </nav>
+      </header>
+      <main class="container-fluid pt-6">
+        <div class="row m-2">
+          <!--Img section-->
+          <section class="col-sm-6 d-flex justify-content-center">
+            <div class=" ">
+              <div>
+                <img
+                  class="float-start img-listing"
+                  height="600"
+                  src="/images/pexels-mertal-22487122_optimized.jpg"
+                  alt=""
+                />
+              </div>
+              <div class="pt-2">
+                <img
+                  width="90"
+                  src="/images/pexels-mertal-22487122_optimized.jpg"
+                  alt=""
+                />
+                <img
+                  width="90"
+                  src="/images/pexels-mertal-22487122_optimized.jpg"
+                  alt=""
+                />
+                <img
+                  width="90"
+                  src="/images/pexels-mertal-22487122_optimized.jpg"
+                  alt=""
+                />
+                <img
+                  width="90"
+                  src="/images/pexels-mertal-22487122_optimized.jpg"
+                  alt=""
+                />
+              </div>
+            </div>
+          </section>
+          <!--Info section-->
+          <section class="col-md-6 d-flex align-items-center light-black-2 p-4">
+            <div>
+              <div>
+                <div class="heading">
+                  <div class="d-flex align-items-center">
+                    <h1>Sculpture</h1>
+                    <p class="pb-0 mb-0 ms-2 highlight-yellow">
+                      Time left: 01h 20t 11sek
+                    </p>
+                  </div>
+                  <div>
+                    <i></i>
+                  </div>
+                </div>
+                <div class="place">
+                  <p>Bergen, Vestland</p>
+                </div>
+                <div class="paragraph">
+                  <p>
+                    Lorem ipsum dolor sit amet consectetur. Morbi sit egestas
+                    sapien tristique molestie leo. Sagittis ut non integer auctor
+                    facilisis vitae mi quis massa. Nunc non erat fringilla quam
+                    diam tortor nibh nec. Quis suspendisse odio est et ipsum
+                    commodo.
+                  </p>
+                </div>
+                <div class="place-bid d-flex">
+                  <div>
+                    <div class="input-group mb-3">
+                      <button class="btn btn-outline-secondary" type="button">
+                        -
+                      </button>
+                      <input
+                        type="text"
+                        class="form-control bid-amount"
+                        placeholder="100"
+                        aria-label="amount"
+                        aria-describedby="button-amount"
+                      />
+                      <button class="btn btn-outline-secondary" type="button">
+                        +
+                      </button>
+                    </div>
+                  </div>
+                  <div>
+                    <button class="btn btn-primary ms-2">Place bid</button>
+                  </div>
+                </div>
+                <div class="more-info">
+                  <div class="d-flex">
+                    <p>Seller:</p>
+                    <a href="#">
+                      <p class="ms-2 seller-name">Amalie Doe</p>
+                    </a>
+                  </div>
+                  <p>Auction Fee: 3 USD</p>
+                </div>
+              </div>
+              <div class="big-history light-black-3 p-3 mt-5">
+                <h3>Bid History</h3>
+                <table class="table table-light">
+                  <thead>
+                    <tr>
+                      <th scope="col">Amount</th>
+                      <th scope="col">Bidder</th>
+                      <th scope="col">Time</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>80 USD</td>
+                      <td>Coolname43</td>
+                      <td>12.11.24 10:11</td>
+                    </tr>
+                    <tr>
+                      <td>70 USD</td>
+                      <td>Awesomename67</td>
+                      <td>12.11.24 10:02</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </section>
+        </div>
+      </main>
+      <footer>
+        <hr />
+        <p>2024 Auction</p>
+      </footer>
     </main>
-    <footer>
-      <hr />
-      <p>2024 Auction</p>
-    </footer>
-  </main>
+  </body>
 </html>

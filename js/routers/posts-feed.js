@@ -119,7 +119,7 @@ export async function populateListings(query = "") {
   
             card.addEventListener("click", (event) => {
                 if (!event.target.classList.contains("place-bid-btn")) {
-                    window.location.href = `/pages/listing.html?id=${listing.id}`;
+                    window.location.href = `./pages/listing.html?id=${listing.id}`;
                 }
             });
   

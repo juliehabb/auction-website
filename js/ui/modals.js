@@ -112,7 +112,7 @@ export function createNewListingModal() {
                 </div>
                 <div class="modal-body d-flex container-fluid">
                     <div class="row">
-                        <div class="col-6">
+                        <div class="col-12">
                             <form id="new-listing-form">
                                 <label for="title" id="title-label">Title</label>
                                 <input id="title" class="form-control" type="input" name="title" />
@@ -130,13 +130,6 @@ export function createNewListingModal() {
                                 <input type="url" name="media" class="form-control" id="mediaField" required>
                                 <button type="submit" class="btn btn-primary mt-3">Create Listing</button>
                             </form>
-                        </div>
-                        <div class="col-6">
-                            <div>
-                                <button>
-                                    <img class="img-fluid" src="/images/pexels-mertal-22487122_optimized.jpg" alt="" />
-                                </button>
-                            </div>
                         </div>
                     </div>
                 </div>

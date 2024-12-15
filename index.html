@@ -19,6 +19,7 @@
     <script type="module" src="./js/routers/posts-feed.js" ></script> 
     <script type="module" src="./js/ui/auth/logout.js" ></script> 
     <script type="module" src="./js/ui/modals.js" ></script> 
+    <script type="module" src="./js/global.js" ></script> 
 
   </head>
 
@@ -26,89 +27,60 @@
     <header>
       <nav class="navbar navbar-expand-lg mb-3">
         <div class="container-fluid">
-          <a class="navbar-brand" href="#">
-            <img src="./images/Logo.png" class="logo" alt="Logo">
-          </a>
-          <button
-            class="navbar-toggler"
-            type="button"
-            data-bs-toggle="collapse"
-            data-bs-target="#navbarSupportedContent"
-            aria-controls="navbarSupportedContent"
-            aria-expanded="false"
-            aria-label="Toggle navigation"
-          >
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-              <li class="nav-item">
-                <a
-                  class="nav-link active text-white custom-white"
-                  aria-current="page"
-                  href="#"
-                  >Home</a
-                >
-              </li>
-            </ul>
-            <div class="navbar-nav align-items-center">
-              <form id="searchForm" class="d-flex mb-0 mr-1 p-4" role="search">
-                <div class="input-group mb-0">
-                    <input
-                        id="searchInput"
-                        type="text"
-                        class="form-control"
-                        placeholder="Search"
-                        aria-label="Search"
-                        aria-describedby="button-addon2"
-                    />
-                    <button
-                        class="btn btn-outline-secondary mr-3 button-addon2"
-                        type="button"
-                        id="searchButton"
-                    >
-                        <i class="fa-solid fa-magnifying-glass"></i>
-                    </button>
-                </div>
-            </form>
-              <div class="ml-3">
-                <button type="button" class="btn btn-primary ml-3 new-listing">
-                  + New Listing
-                </button>
-              </div>
-
-              <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                <li class="nav-item dropdown">
-                  <a
-                    class="nav-link dropdown-toggle mr-3"
-                    href="./pages/profile.html"
-                    role="button"
-                    data-bs-toggle="dropdown"
-                    aria-expanded="false"
-                  >
-                    <img
-                      class="rounded-circle"
-                      width="40rem"
-                      height="40rem"
-                      src="./images/pexels-mertal-22487122_optimized.jpg
-                              "
-                      alt="Profile photo"
-                    />
-                  </a>
-                  <ul class="dropdown-menu">
-                    <li><a class="dropdown-item" href="#">Profile</a></li>
-                    <li><a class="dropdown-item logout-button" href="#">Log out</a></li>
-                    <li><hr class="dropdown-divider" /></li>
-                    <li>
-                      <a class="dropdown-item" href="#">Something else here</a>
+            <a class="navbar-brand" href="#">
+                <img src="./images/Logo.png" class="logo" alt="Logo">
+            </a>
+            <button
+                class="navbar-toggler"
+                type="button"
+                aria-controls="navbarSupportedContent"
+                aria-expanded="false"
+                aria-label="Toggle navigation"
+            >
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active text-white custom-white" href="#">Home</a>
                     </li>
-                  </ul>
-                </li>
-              </ul>
+                </ul>
+                <div class="navbar-nav align-items-center">
+                    <div class="ml-3">
+                        <button type="button" class="btn btn-primary ml-3 new-listing">
+                            + New Listing
+                        </button>
+                    </div>
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item dropdown">
+                            <a
+                                class="nav-link dropdown-toggle mr-3"
+                                href="./pages/profile.html"
+                                role="button"
+                                data-bs-toggle="dropdown"
+                                aria-expanded="false"
+                            >
+                                <img
+                                    class="rounded-circle"
+                                    width="40"
+                                    height="40"
+                                    src="./images/pexels-mertal-22487122_optimized.jpg"
+                                    alt="Profile photo"
+                                />
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="#">Profile</a></li>
+                                <li><a class="dropdown-item logout-button" href="#">Log out</a></li>
+                                <li><hr class="dropdown-divider"></li>
+                                <li><a class="dropdown-item" href="#">Something else here</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
             </div>
-          </div>
         </div>
-      </nav>
+    </nav>
+    
     </header>
 
     <main class="container-fluid">

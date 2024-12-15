@@ -45,7 +45,6 @@ export async function onCreateListing(event) {
         return;
     }
 
-    
 
     try {
         const listing = await createListing({ title, description, endsAt, tags, mediaUrl});

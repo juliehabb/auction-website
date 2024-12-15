@@ -109,9 +109,6 @@ export async function populateListings(query = "") {
                         <hr />
                         <div class="d-flex justify-content-between mb-2">
                             <p>Seller: ${listing.seller?.name || "Unknown"}</p>
-                            <button class="btn btn-primary place-bid-btn" data-id="${listing.id}">
-                                Place bid
-                            </button>
                         </div>
                     </div>
                 </div>

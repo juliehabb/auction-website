@@ -1,6 +1,14 @@
 import { createListing } from "../../api/listing/create.js";
+import { isAuthenticated} from "../../api/auth/authUtils.js"
 
 document.addEventListener("DOMContentLoaded", () => {
+    // Restrict access to authenticated users
+    if (!isAuthenticated()) {
+        alert("You must be logged in to create a new listing.");
+        window.location.href = "/login.html"; // Redirect to login page
+        return;
+    }
+
     const form = document.getElementById("new-listing-form");
     if (form) {
         form.addEventListener("submit", onCreateListing);

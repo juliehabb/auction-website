@@ -1,5 +1,6 @@
 import { readListing, placeBid } from "../api/listing.js";
 import { createBidModal, showBidModal } from "../ui/modals.js";
+import { isAuthenticated, requireAuthentication } from "../api/auth/authUtils.js";
 
 async function fetchAndDisplayListing() {
     const params = new URLSearchParams(window.location.search);
@@ -20,9 +21,11 @@ async function fetchAndDisplayListing() {
         // Check if the auction has ended
         const now = new Date();
         const endsAt = new Date(listing.endsAt);
+        const placeBidButton = document.querySelector(".btn-primary.ms-2");
+
         if (endsAt < now) {
             alert("This listing has already ended. You cannot place a bid.");
-            document.querySelector(".btn-primary.ms-2").disabled = true; // Disable "Place Bid" button
+            if (placeBidButton) placeBidButton.disabled = true; // Disable "Place Bid" button
         }
 
         // Update the main image
@@ -45,7 +48,8 @@ async function fetchAndDisplayListing() {
         document.querySelector(".heading p").textContent = `Time left: ${
             listing.endsAt ? new Date(listing.endsAt).toLocaleString() : "No end date"
         }`;
-        document.querySelector(".paragraph p").textContent = listing.description || "No description provided.";
+        document.querySelector(".paragraph p").textContent =
+            listing.description || "No description provided.";
 
         // Populate bid history
         const bidHistoryTable = document.querySelector(".big-history tbody");
@@ -62,14 +66,25 @@ async function fetchAndDisplayListing() {
                 bidHistoryTable.appendChild(row);
             });
         } else {
-            bidHistoryTable.innerHTML = "<tr><td colspan='3'>No bids available.</td></tr>";
+            bidHistoryTable.innerHTML =
+                "<tr><td colspan='3'>No bids available.</td></tr>";
         }
 
-        // Attach event listener to the "Place Bid" button
-        document.querySelector(".btn-primary.ms-2").addEventListener("click", () => {
-            const bidAmount = document.querySelector(".bid-amount").value;
-            showBidModal(bidAmount);
-        });
+        // Handle "Place Bid" button logic
+        if (placeBidButton) {
+            if (isAuthenticated()) {
+                placeBidButton.addEventListener("click", () => {
+                    const bidAmount = document.querySelector(".bid-amount").value;
+                    showBidModal(bidAmount);
+                });
+            } else {
+                placeBidButton.disabled = true;
+                placeBidButton.addEventListener("click", () => {
+                    alert("You must be logged in to place a bid.");
+                    window.location.href = "/login.html"; // Redirect to login page
+                });
+            }
+        }
     } catch (error) {
         console.error("Error fetching listing:", error);
         document.body.innerHTML = "<p>Failed to load listing details.</p>";
@@ -79,6 +94,8 @@ async function fetchAndDisplayListing() {
 // Handle bid submission from the modal
 document.addEventListener("click", (event) => {
     if (event.target.id === "submitBid") {
+        requireAuthentication(); // Ensure the user is logged in before submitting a bid
+
         const bidAmount = parseFloat(document.getElementById("bidInput").value);
         const listingId = new URLSearchParams(window.location.search).get("id");
 
@@ -110,4 +127,3 @@ document.addEventListener("DOMContentLoaded", () => {
     // Fetch and display listing details
     fetchAndDisplayListing();
 });
-

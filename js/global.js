@@ -1,4 +1,5 @@
 import { initializeNavbarBehavior } from "./routers/nav.js";
+import * as bootstrap from 'bootstrap';
 
 
 // Initialize the dropdown and navbar-toggler functionalities
@@ -24,4 +25,16 @@ document.addEventListener("DOMContentLoaded", () => {
         );
       }
     });
-})
+});
+
+export function showFeedback(message, type = "success") {
+  const modalTitle = document.getElementById("feedbackModalLabel");
+  const modalBody = document.getElementById("feedbackModalBody");
+
+  modalTitle.textContent = type === "error" ? "Error" : "Success";
+  modalBody.textContent = message;
+
+  const modalElement = document.getElementById("feedbackModal");
+  const modal = new bootstrap.Modal(modalElement);
+  modal.show();
+}

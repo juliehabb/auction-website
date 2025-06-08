@@ -1,4 +1,5 @@
 import { authFetch } from "../../ui/auth/authfetch.js";
+import { showFeedback } from "../../global.js";
 
 /**
  * Place a bid on a specific listing.
@@ -30,20 +31,25 @@ import { authFetch } from "../../ui/auth/authfetch.js";
  * - Expects the bid amount to be a valid numeric value.
  */
 export async function placeBid(listingId, bidAmount) {
-    const url = `https://v2.api.noroff.dev/auction/listings/${listingId}/bids`;
+  const url = `https://v2.api.noroff.dev/auction/listings/${listingId}/bids`;
 
+  try {
     const response = await authFetch(url, {
-        method: "POST",
-        headers: {
-            "Content-Type": "application/json",
-        },
-        body: JSON.stringify({ amount: bidAmount }),
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ amount: bidAmount }),
     });
 
     if (!response.ok) {
-        throw new Error("Failed to place bid");
+      throw new Error("Failed to place bid");
     }
 
     return await response.json();
+  } catch (error) {
+    console.error("Place bid failed:", error);
+    showFeedback(error.message, "error");
+  }
 }
 

@@ -34,7 +34,7 @@ An interactive auction site where users can browse, list, and bid on items. This
 
 ### Install dependencies
 
-```bash
+
 npm install
 
 2.Install dependencies:
@@ -55,7 +55,7 @@ Make sure the homepage field in package.json is set correctly:
 Julie Habb
 GitHub @juliehabb
 
-##Acknowledgments
+## Acknowledgments
 Noroff API Docs
 
 React documentation

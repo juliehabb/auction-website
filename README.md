@@ -49,7 +49,7 @@ To build and deploy to GitHub Pages:
 npm run deploy
 
 Make sure the homepage field in package.json is set correctly:
-"homepage": "https://juliehabb.github.io/final-exam"
+"homepage": "https://juliehabb.github.io/auction-website"
 
 ### Authors
 Julie Habb
